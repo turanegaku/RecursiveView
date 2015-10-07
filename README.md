@@ -43,7 +43,7 @@ specified_directory/
 ```
 
 You input abusolute path of specified_directory in the inputbox "root directory"  
-`Enter Key`
+`Enter Key`  
 You can first see bird1~5.png, cat.png, dog.png.  
 ``Next``  
 egg.png, cake.png, rice.png  
