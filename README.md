@@ -7,6 +7,7 @@ This is Recursive Image Viewer using JavaFX.
 ## Description
 - This application show you **ALL** Image file in the directory.
 - You know what images in directories which is in the specified directory.
+- input your specified directory in the inputbox "root directory"
 - You can see the images up down scroll.
 - Click ``Next`` or ``Prev`` button, then viewer show the next Directory
 
@@ -41,6 +42,8 @@ specified_directory/
 	+-- f.png
 ```
 
+You input abusolute path of specified_directory in the inputbox "root directory"  
+`Enter Key`
 You can first see bird1~5.png, cat.png, dog.png.  
 ``Next``  
 egg.png, cake.png, rice.png  
