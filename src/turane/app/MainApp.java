@@ -32,8 +32,8 @@ public class MainApp extends Application {
 	@FXML
 	private Button prev, next;
 
-	private 
-	ListIterator<Path> files = null;
+	private ListIterator<Path> files = null;
+	private Path current = null;
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -90,7 +90,14 @@ public class MainApp extends Application {
 			folder.setText("Reach to final items");
 			return;
 		}
-		setImages(files.previous());
+		Path p = files.previous();
+		if (p.equals(current)) {
+			prv(e);
+			return;
+		}
+		current = p;
+		setImages(current);
+		imgs.scrollTo(0);
 	}
 	@FXML
 	private void nxt(ActionEvent e){
@@ -102,7 +109,14 @@ public class MainApp extends Application {
 			folder.setText("Reach to final items");
 			return;
 		}
-		setImages(files.next());
+		Path p = files.next();
+		if (p.equals(current)) {
+			nxt(e);
+			return;
+		}
+		current = p;
+		setImages(current);
+		imgs.scrollTo(0);
 	}
 
 	public static void main(String[] args) {
