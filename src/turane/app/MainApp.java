@@ -67,8 +67,10 @@ public class MainApp extends Application {
 				try {
 					InputStream is = Files.newInputStream(path, StandardOpenOption.READ);
 					ImageView iv = new ImageView(new Image(is));
-					iv.fitWidthProperty().bind(imgs.widthProperty().subtract(20));
-					iv.setPreserveRatio(true);
+					if(iv.getImage().getWidth() > imgs.getWidth()){
+						iv.fitWidthProperty().bind(imgs.widthProperty().subtract(20));
+						iv.setPreserveRatio(true);
+					}
 					imgs.getItems().add(iv);
 					is.close();
 				} catch (IOException e) {
