@@ -9,6 +9,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.ListIterator;
 import java.util.stream.Collectors;
 
+import javax.swing.plaf.metal.MetalIconFactory.FolderIcon16;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,6 +43,17 @@ public class MainApp extends Application {
 		stage.setScene(new Scene(root));
 
 		stage.show();
+	}
+	
+	@FXML
+	public void folder(ActionEvent e){
+		try {
+			Files.move(current, current.resolveSibling(folder.getText()));
+			nxt(e);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 	@FXML

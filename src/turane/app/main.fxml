@@ -26,7 +26,7 @@
    <top>
       <HBox BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="folder" editable="false" promptText="folder name" />
+            <TextField fx:id="folder" onAction="#folder" promptText="folder name" />
             <TextField fx:id="directory" onAction="#dir" promptText="root directory" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
