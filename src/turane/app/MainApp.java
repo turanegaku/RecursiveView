@@ -50,6 +50,7 @@ public class MainApp extends Application {
 		try {
 			Files.move(current, current.resolveSibling(folder.getText()));
 			nxt(e);
+			folder.selectAll();
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -102,6 +103,7 @@ public class MainApp extends Application {
 			folder.setText("Fail to load root Directory");
 			return;
 		} else if (!files.hasPrevious()){
+			current = null;
 			folder.setText("Reach to final items");
 			return;
 		}
@@ -121,6 +123,7 @@ public class MainApp extends Application {
 			folder.setText("Fail to load root Directory");
 			return;
 		} else if (!files.hasNext()){
+			current = null;
 			folder.setText("Reach to final items");
 			return;
 		}
